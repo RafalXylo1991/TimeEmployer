@@ -1,0 +1,42 @@
+<!--worker_create.ejs-->
+<%- contentFor('body') %>
+<h2>Dodaj Pracownika</h2>
+<form action="/workers/add" method="post">
+  <div class="mb-3">
+    <label for="name" class="form-label">Imię:</label>
+    <input type="text" name="name" class="form-control" required>
+  </div>
+  <div class="mb-3">
+    <label for="surname" class="form-label">Nazwisko:</label>
+    <input type="text" name="surname" class="form-control" required>
+  </div>
+  <div class="mb-3">
+    <label for="email" class="form-label">E-mail:</label>
+    <input type="email" name="email" class="form-control" required>
+  </div>
+  <div class="mb-3">
+    <label for="position" class="form-label">Stanowisko:</label>
+    <input type="text" name="position" class="form-control" required>
+  </div>
+  <div class="mb-3">
+    <label for="contract" class="form-label">Typ Umowy:</label>
+    <input type="text" name="contract" class="form-control" required>
+  </div>
+  <div class="mb-3">
+    <label for="vacation_days" class="form-label">Ilość Urlopów:</label>
+    <input type="number" name="vacationDays" class="form-control" required>
+  </div>
+  <div class="mb-3">
+    <label for="work_hours" class="form-label">Ilość Godzin Pracy:</label>
+    <input type="number" name="workHours" class="form-control" required>
+  </div>
+  <div class="mb-3">
+    <label for="money_per_hour" class="form-label">Stawka Godzinowa:</label>
+    <input type="number" name="moneyperHour" class="form-control" required>
+  </div>
+  <div class="mb-3">
+    <label for="seniority_in_years" class="form-label">Staż Pracy:</label>
+    <input type="number" name="seniorityinYears" class="form-control" required>
+  </div>
+  <button type="submit" class="btn btn-primary">Dodaj Pracownika</button>
+</form>

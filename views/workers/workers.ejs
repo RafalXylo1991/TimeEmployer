@@ -1,0 +1,71 @@
+<!--workers.ejs-->
+<<<<<<< HEAD
+
+<h2>Lista Pracowników</h2>
+
+<%= user %>
+=======
+<%- contentFor('body') %>
+  <h2>Lista Pracowników</h2>
+
+>>>>>>> 547398db197ce5fd80f9379e0699cf314c502d68
+  <table class="table">
+    <thead>
+      <tr>
+        <th>Id</th>
+        <th>Imię</th>
+        <th>Nazwisko</th>
+        <th>E-mail</th>
+        <th>Stanowisko</th>
+        <th>Typ umowy</th>
+        <th>Ilość urlopów</th>
+        <th>Ilość godzin pracy</th>
+        <th>Stawka godzinowa</th>
+        <th>Staż pracy (w latach)</th>
+        <th>Akcje</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% workers.forEach((worker, index)=> { %>
+        <tr>
+          <td>
+            <%= index + 1 %>
+          </td>
+          <td>
+            <%= worker.name %>
+          </td>
+          <td>
+            <%= worker.surname %>
+          </td>
+          <td>
+            <%= worker.email %>
+          </td>
+          <td>
+            <%= worker.position %>
+          </td>
+          <td>
+            <%= worker.contract %>
+          </td>
+          <td>
+            <%= worker['vacationDays'] %>
+          </td>
+          <td>
+            <%= worker['workHours'] %>
+          </td>
+          <td>
+            <%= worker['moneyperHour'] %>
+          </td>
+          <td>
+            <%= worker['seniorityinYears'] %>
+          </td>
+          <td>
+
+            <a href="/workers/edit/<%= worker.id %>" class="btn btn-warning">Edytuj</a>
+            <a href="/workers/delete/<%= worker.id %>" class="btn btn-danger">Usuń</a>
+
+          </td>
+        </tr>
+        <% }) %>
+    </tbody>
+  </table>
+  <a href="/workers/add" class="btn btn-secondary">Dodaj Pracownika</a>

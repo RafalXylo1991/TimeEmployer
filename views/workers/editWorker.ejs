@@ -1,0 +1,43 @@
+<!--editWorker.ejs-->
+<%- contentFor('body') %>
+<h2>Edycja Pracownika: <%= worker.name %> </h2>
+<form action="/workers/edit" method="post">
+  <input type="hidden" name="id" value="<%= worker.id %>">
+  <div class="mb-3">
+    <label for="name" class="form-label">Imię:</label>
+    <input type="text" name="name" value="<%= worker.name %>" class="form-control">
+  </div>
+  <div class="mb-3">
+    <label for="surname" class="form-label">Nazwisko:</label>
+    <input type="text" name="surname" value="<%= worker.surname %>" class="form-control">
+  </div>
+  <div class="mb-3">
+    <label for="email" class="form-label">E-mail:</label>
+    <input type="email" name="email" value="<%= worker.email %>" class="form-control">
+  </div>
+  <div class="mb-3">
+    <label for="position" class="form-label">Stanowisko:</label>
+    <input type="text" name="position" value="<%= worker.position %>" class="form-control">
+  </div>
+  <div class="mb-3">
+    <label for="contract" class="form-label">Typ Umowy:</label>
+    <input type="text" name="contract" value="<%= worker.contract %>" class="form-control">
+  </div>
+  <div class="mb-3">
+    <label for="vacation_days" class="form-label">Ilość Urlopów:</label>
+    <input type="number" name="vacationDays" value="<%= worker.vacationDays %>" class="form-control">
+  </div>
+  <div class="mb-3">
+    <label for="work_hours" class="form-label">Ilość Godzin Pracy:</label>
+    <input type="number" name="workHours" value="<%= worker.workHours %>" class="form-control">
+  </div>
+  <div class="mb-3">
+    <label for="money_per_hour" class="form-label">Stawka Godzinowa:</label>
+    <input type="number" name="moneyperHour" value="<%= worker.moneyperHour %>" class="form-control">
+  </div>
+  <div class="mb-3">
+    <label for="seniority_in_years" class="form-label">Staż Pracy:</label>
+    <input type="number" name="seniorityinYears" value="<%= worker.seniorityinYears %>" class="form-control">
+  </div>
+  <button type="submit" class="btn btn-primary">Zapisz zmiany</button>
+</form>

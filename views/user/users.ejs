@@ -1,0 +1,31 @@
+<!-- users.ejs -->
+<%- contentFor('body') %>
+<h2>Lista Użytkowników</h2>
+  <table class="table"  >
+    <thead>
+      <tr>
+        <th scope="col">Id</th>
+        <th scope="col">Name</th>
+        <th scope="col">E-mail</th>
+        <th scope="col">Akcje</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% users.forEach((user, index) => { %>
+        <tr>
+          <th scope="row"><%= index + 1 %></th>
+          <td><%= user.name %></td>
+          <td><%= user.email %></td>
+          <td>
+            <% if (isAdmin) { %>
+              <a href="/users/edit/<%= user.id %>" class="btn btn-warning">Edytuj</a>
+              <a href="/users/delete/<%= user.id %>" class="btn btn-danger">Usuń</a>
+            <% } %>
+          </td>
+        </tr>
+      <% }) %>
+    </tbody>
+  </table>
+  <a href="/users/add"><button type="button" class="btn btn-secondary">Dodaj użytkownika</button></a>
+
+

@@ -1,0 +1,28 @@
+<!-- user_create.ejs -->
+<%- contentFor('body') %>
+<form id="addUserForm" action="/add" method="post" >
+    <div class="mb-3">
+        <label for="name" class="form-label">Imię</label>
+        <input type="text" class="form-control" id="name" name="name" required>
+    </div>
+    <div class="mb-3">
+        <label for="email" class="form-label">E-mail</label>
+        <input type="email" class="form-control" id="email" name="email" required>
+    </div>
+    <div class="mb-3">
+        <label for="password" class="form-label">Hasło</label>
+        <input type="password" class="form-control" id="password" name="password" required>
+    </div>
+    <div class="mb-3">
+    <div class="btn-group" role="group" aria-label="Basic checkbox toggle button group">
+        <input type="checkbox" class="btn-check" name="isadmin" id="btncheck1" autocomplete="off">
+        <label class="btn btn-outline-primary" for="btncheck1">Administrator</label>
+      
+        <input type="checkbox" class="btn-check" name="role" id="btncheck2" autocomplete="off">
+        <label class="btn btn-outline-primary" for="btncheck2">Rola (administrator)</label>
+      
+      
+      </div>
+      </div>
+    <button type="submit" class="btn btn-primary">Dodaj użytkownika</button>
+</form>
